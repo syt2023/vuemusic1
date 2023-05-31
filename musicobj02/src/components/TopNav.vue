@@ -1,53 +1,58 @@
 <template>
     <div class="topNav">
         <div class="topLeft">
-            <svg class="icon" aria-hidden="ture">
+            <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-liebiao"></use>
             </svg>
         </div>
         <div class="topCenter">
-            <span class="navBtn">我的</span>
-            <span class="navBtn active">发现</span>
-            <span class="navBtn">云村</span>
-            <span class="navBtn">视频</span>
+            <span class="navBth" @click="$router.push('/me')">我的</span>
+            <span class="navBth active">发现</span>
+            <span class="navBth">云村</span>
+            <span class="navBth">视频</span>
         </div>
-        <div class="topRight">
-            <svg class="icon" aria-hidden="ture">
+        <div class="topRight" @click.stop.prevent="$router.push('search')">
+            <svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-search"></use>
             </svg>
         </div>
     </div>
 </template>
+
 <script>
 export default{
-    name:"topnav",
+    name:'topNav'
 }
 </script>
 
+
 <style lang="less" scoped>
-.topNav{
+.topNav {
     width: 7.5rem;
     height: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 0.2rem;
-    .icon{
+
+    .icon {
         width: 0.5rem;
         height: 0.5rem;
     }
-    .search{
+
+    .search {
         width: 0.45rem;
         height: 0.45rem;
     }
-    .topCenter{
+
+    .topCenter {
         width: 4.5rem;
         display: flex;
         justify-content: space-around;
-        .active{
+
+        .active {
             font-weight: 900;
         }
     }
 
-}
-</style>
+}</style>
